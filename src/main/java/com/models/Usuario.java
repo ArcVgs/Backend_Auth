@@ -1,14 +1,12 @@
 package com.models;
 
-import java.security.Timestamp;
-
 import jakarta.persistence.*;
 import lombok.Data;
 
 @Data
 @Entity
 @Table(name = "usuarios")
-public class Usuario {
+public class Usuario extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,10 +22,5 @@ public class Usuario {
 
     @Column(name = "foto_url")
     private String fotoUrl;
-
-    @Column(name = "fecha_registro", insertable = false, updatable = false)
-    private Timestamp fechaRegistro;
-
-    private Integer estado;
 
 }
