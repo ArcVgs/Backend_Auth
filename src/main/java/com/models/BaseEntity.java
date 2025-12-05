@@ -16,4 +16,8 @@ public abstract class BaseEntity {
     @Column(nullable = false, columnDefinition = "INT DEFAULT 1")
     private Integer estado;
 
+    public BaseEntity() {
+        this.estado = 1;
+    }
+
 }

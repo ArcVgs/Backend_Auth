@@ -5,10 +5,10 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class GoogleAuthResponse {
 
+public class GoogleLoginAuthResponse {
     private String mensaje;
     private Long id;
     private Integer estado;
-
+    private String token;
 }
