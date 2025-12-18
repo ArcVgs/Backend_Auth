@@ -1,8 +1,8 @@
-package com.repository;
+package com.Auth.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.models.Usuario;
+import com.Auth.models.Usuario;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
     Usuario findByEmail(String email);

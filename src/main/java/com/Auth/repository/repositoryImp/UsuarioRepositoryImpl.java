@@ -1,11 +1,11 @@
-package com.repository.repositoryImp;
+package com.Auth.repository.repositoryImp;
 
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.models.Usuario;
-import com.repository.UsuarioRepositoryCustom;
+import com.Auth.models.Usuario;
+import com.Auth.repository.UsuarioRepositoryCustom;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;

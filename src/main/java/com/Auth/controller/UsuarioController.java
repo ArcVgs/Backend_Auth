@@ -1,11 +1,11 @@
-package com.controller;
+package com.Auth.controller;
 
-import com.dto.GoogleAuthRequest;
-import com.dto.GoogleAuthResponse;
-import com.enums.EstadosUsuario;
-import com.models.Usuario;
-import com.repository.UsuarioRepository;
-import com.service.UsuarioService;
+import com.Auth.dto.GoogleAuthRequest;
+import com.Auth.dto.GoogleAuthResponse;
+import com.Auth.enums.EstadosUsuario;
+import com.Auth.models.Usuario;
+import com.Auth.repository.UsuarioRepository;
+import com.Auth.service.UsuarioService;
 
 import java.util.Optional;
 

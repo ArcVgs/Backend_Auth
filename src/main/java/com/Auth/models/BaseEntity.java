@@ -1,4 +1,4 @@
-package com.models;
+package com.Auth.models;
 
 import java.sql.Timestamp;
 

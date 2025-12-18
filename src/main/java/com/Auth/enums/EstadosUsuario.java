@@ -1,4 +1,4 @@
-package com.enums;
+package com.Auth.enums;
 
 import java.util.Arrays;
 

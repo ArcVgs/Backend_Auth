@@ -1,8 +1,8 @@
-package com.repository;
+package com.Auth.repository;
 
 import java.util.List;
 
-import com.models.Usuario;
+import com.Auth.models.Usuario;
 
 public interface UsuarioRepositoryCustom {
 

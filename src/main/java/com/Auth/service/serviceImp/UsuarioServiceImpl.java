@@ -1,14 +1,14 @@
-package com.service.serviceImp;
+package com.Auth.service.serviceImp;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.models.Usuario;
-import com.repository.UsuarioRepository;
-import com.service.UsuarioService;
-import com.repository.UsuarioRepositoryCustom;
+import com.Auth.models.Usuario;
+import com.Auth.repository.UsuarioRepository;
+import com.Auth.repository.UsuarioRepositoryCustom;
+import com.Auth.service.UsuarioService;
 
 @Service
 public class UsuarioServiceImpl implements UsuarioService {

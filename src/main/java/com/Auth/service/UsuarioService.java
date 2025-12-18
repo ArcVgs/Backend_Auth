@@ -1,8 +1,8 @@
-package com.service;
+package com.Auth.service;
 
 import java.util.List;
 
-import com.models.Usuario;
+import com.Auth.models.Usuario;
 
 public interface UsuarioService {
 
