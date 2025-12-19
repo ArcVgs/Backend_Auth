@@ -9,4 +9,6 @@ public interface UsuarioService {
     List<Usuario> listarUsuariosActivos();
 
     Usuario registrarOLoginConGoogle(String email, String nombre, String googleId, String fotoUrl);
+
+    String generarToken(String email);
 }

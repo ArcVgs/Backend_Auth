@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.Auth.models.Usuario;
 import com.Auth.repository.UsuarioRepository;
 import com.Auth.repository.UsuarioRepositoryCustom;
+import com.Auth.service.JwtService;
 import com.Auth.service.UsuarioService;
 
 @Service
@@ -17,6 +18,8 @@ public class UsuarioServiceImpl implements UsuarioService {
     private UsuarioRepositoryCustom UsuarioRepositoryCustom;
     @Autowired
     private UsuarioRepository UsuarioRepository;
+    @Autowired
+    private JwtService jwtService;
 
     @Override
     public Usuario registrarOLoginConGoogle(String email, String nombre, String googleId, String fotoUrl) {
@@ -44,6 +47,11 @@ public class UsuarioServiceImpl implements UsuarioService {
     @Override
     public List<Usuario> listarUsuariosActivos() {
         return UsuarioRepositoryCustom.listarUsuariosActivos();
+    }
+
+    @Override
+    public String generarToken(String email) {
+        return jwtService.generateToken(email);
     }
 
 }

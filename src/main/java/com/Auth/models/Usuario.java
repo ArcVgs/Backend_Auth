@@ -1,5 +1,7 @@
 package com.Auth.models;
 
+import com.Auth.enums.RolUsuario;
+
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -22,5 +24,12 @@ public class Usuario extends BaseEntity {
 
     @Column(name = "foto_url")
     private String fotoUrl;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "rol", nullable = false)
+    private RolUsuario rol;
+
+    @Column(nullable = false)
+    private boolean enabled;
 
 }
