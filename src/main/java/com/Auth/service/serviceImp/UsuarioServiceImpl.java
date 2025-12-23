@@ -5,6 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.Auth.dto.AuthResponse;
+import com.Auth.dto.GoogleAuthRequest;
+import com.Auth.enums.RolUsuario;
 import com.Auth.models.Usuario;
 import com.Auth.repository.UsuarioRepository;
 import com.Auth.repository.UsuarioRepositoryCustom;
@@ -29,9 +32,9 @@ public class UsuarioServiceImpl implements UsuarioService {
 
         if (usuario != null) {
             // Ya existe el usuario
-            usuario.setNombre(usuario.getNombre());
-            usuario.setGoogleId(usuario.getGoogleId());
-            usuario.setFotoUrl(usuario.getFotoUrl());
+            usuario.setNombre(nombre);
+            usuario.setGoogleId(googleId);
+            usuario.setFotoUrl(fotoUrl);
             return UsuarioRepository.save(usuario);
         }
 
@@ -41,6 +44,9 @@ public class UsuarioServiceImpl implements UsuarioService {
         usuario.setEmail(email);
         usuario.setGoogleId(googleId);
         usuario.setFotoUrl(fotoUrl);
+        usuario.setRol(RolUsuario.USER); // 🔑 O ADMIN si aplica
+        usuario.setEnabled(true); // 🔑
+        usuario.setEstado(1); // 🔑 negocio
         return UsuarioRepository.save(usuario);
     }
 
@@ -52,6 +58,20 @@ public class UsuarioServiceImpl implements UsuarioService {
     @Override
     public String generarToken(String email) {
         return jwtService.generateToken(email);
+    }
+
+    @Override
+    public AuthResponse loginConGoogle(GoogleAuthRequest request) {
+
+        Usuario usuario = registrarOLoginConGoogle(
+                request.getEmail(),
+                request.getNombre(),
+                request.getGoogleId(),
+                request.getFotoUrl());
+
+        String token = jwtService.generateToken(usuario.getEmail());
+
+        return new AuthResponse(token, usuario);
     }
 
 }

@@ -16,7 +16,7 @@ public class Usuario extends BaseEntity {
 
     private String nombre;
 
-    @Column(unique = true)
+    @Column(unique = true, nullable = false)
     private String email;
 
     @Column(name = "google_id", unique = true)
@@ -27,9 +27,9 @@ public class Usuario extends BaseEntity {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "rol", nullable = false)
-    private RolUsuario rol;
+    private RolUsuario rol; // Admin o User
 
     @Column(nullable = false)
-    private boolean enabled;
+    private boolean enabled; // Seguridad
 
 }

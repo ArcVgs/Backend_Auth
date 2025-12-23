@@ -1,5 +1,6 @@
 package com.Auth.controller;
 
+import com.Auth.dto.AuthResponse;
 import com.Auth.dto.GoogleAuthRequest;
 import com.Auth.dto.GoogleAuthResponse;
 import com.Auth.enums.EstadosUsuario;
@@ -30,9 +31,8 @@ public class UsuarioController {
     private UsuarioRepository usuarioRepository;
 
     @PostMapping("/registrar")
-    public Usuario registrarOLoginConGoogle(@RequestBody GoogleAuthRequest request) {
-        return usuarioService.registrarOLoginConGoogle(request.getEmail(), request.getNombre(), request.getGoogleId(),
-                request.getFotoUrl());
+    public ResponseEntity<AuthResponse> registrarOLoginConGoogle(@RequestBody GoogleAuthRequest request) {
+        return ResponseEntity.ok(usuarioService.loginConGoogle(request));
     }
 
     @PutMapping("/{id}/actualizar")

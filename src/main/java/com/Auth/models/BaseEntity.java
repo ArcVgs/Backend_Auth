@@ -1,6 +1,6 @@
 package com.Auth.models;
 
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.MappedSuperclass;
@@ -11,9 +11,9 @@ import lombok.Data;
 public abstract class BaseEntity {
 
     @Column(name = "fecha_registro", insertable = false, updatable = false)
-    private Timestamp fechaRegistro;
+    private LocalDateTime fechaRegistro;
 
     @Column(nullable = false, columnDefinition = "INT DEFAULT 1")
-    private Integer estado;
+    private Integer estado; // negocio
 
 }
