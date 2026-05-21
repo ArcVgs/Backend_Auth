@@ -16,7 +16,7 @@ public class PuntosGPS {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(optional = false)
     private Recorrido recorrido;
 
     @Column(nullable = false)
@@ -25,7 +25,7 @@ public class PuntosGPS {
     @Column(nullable = false)
     private Double lng;
 
-    @Column(nullable = false)
-    private Double order;
+    @Column(name = "orden", nullable = false)
+    private Integer orden;
 
 }

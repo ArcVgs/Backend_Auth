@@ -19,7 +19,7 @@ public class Recorrido extends BaseEntity {
     @ManyToOne(optional = false)
     private Usuario usuario;
 
-    @Column(nullable = false)
+    @Column
     private Double area;
 
     @Column(nullable = false)
